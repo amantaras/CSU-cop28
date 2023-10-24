@@ -1,7 +1,811 @@
-Create run failed with FlowRequestException: Calling submit_bulk_run failed with request id: 1b2b5a9b-c727-4414-a096-5faf1f1c6dc0 
-Status code: 400 
-Reason: Not found input index_name for node search_index in flow when try to do connection override, please 
-Error message: (UserError) Not found input index_name for node search_index in flow when try to do connection override, please make sure you have provided correct connection.
-Code: UserError
-Message: Not found input index_name for node search_index in flow when try to do connection override, please make sure you have provided correct connection. 
+2023-10-24 09:08:44 +0000      62 promptflow-runtime INFO     [cop28_default_20231024_130827_014348] Receiving v2 bulk run request 09a19ca6-7aa1-42b9-8f71-9fb991e027cc: {customer_content}
+2023-10-24 09:08:44 +0000      62 promptflow-runtime INFO     Running <function RunHistoryClient.get_run at 0x7f58d778e8b0>, 3 more tries to go.
+2023-10-24 09:08:44 +0000      62 promptflow-runtime INFO     Running <function RunHistoryClient.get_run at 0x7f58d778e820>, 3 more tries to go.
+2023-10-24 09:08:44 +0000      62 promptflow-runtime INFO     Running <function RunHistoryClient.update_run_status at 0x7f58d778e670>, 3 more tries to go.
+2023-10-24 09:08:44 +0000      62 promptflow-runtime INFO     Updating cop28_default_20231024_130827_014348 to Status.Preparing...
+2023-10-24 09:08:45 +0000      62 promptflow-runtime INFO     Starting to check process 3460 status for run cop28_default_20231024_130827_014348
+2023-10-24 09:08:45 +0000      62 promptflow-runtime INFO     Start checking run status for bulk run cop28_default_20231024_130827_014348
+2023-10-24 09:08:45 +0000      62 promptflow-runtime INFO     Start checking run status for run cop28_default_20231024_130827_014348
+2023-10-24 09:08:45 +0000    3460 promptflow-runtime INFO     [62--3460] Start processing flowV2......
+2023-10-24 09:08:45 +0000    3460 promptflow-runtime INFO     Setting mlflow tracking uri...
+2023-10-24 09:08:45 +0000    3460 promptflow-runtime INFO     Validating 'AzureML Data Scientist' user authentication...
+2023-10-24 09:08:45 +0000    3460 promptflow-runtime INFO     Running <function RuntimeConfig.validate_by_get_dummy_run at 0x7f58d7797d30>, 5 more tries to go.
+2023-10-24 09:08:45 +0000    3460 promptflow-runtime INFO     Successfully validated 'AzureML Data Scientist' user authentication.
+2023-10-24 09:08:45 +0000    3460 promptflow-runtime INFO     Using AzureMLRunStorageV2
+2023-10-24 09:08:45 +0000    3460 promptflow-runtime INFO     Setting mlflow tracking uri to 'azureml://eastus.api.azureml.ms/mlflow/v1.0/subscriptions/61901f18-d50c-4d85-90d3-cb4670a440db/resourceGroups/cop28-rg/providers/Microsoft.MachineLearningServices/workspaces/cop28-ml-eastus'
+2023-10-24 09:08:45 +0000    3460 promptflow-runtime INFO     Running <function MlflowHelper.get_host_creds at 0x7f58ce39e160>, 5 more tries to go.
+2023-10-24 09:08:45 +0000    3460 promptflow-runtime INFO     Initialized blob service client for AzureMLRunTracker.
+2023-10-24 09:08:45 +0000    3460 promptflow-runtime INFO     Setting mlflow tracking uri to 'azureml://eastus.api.azureml.ms/mlflow/v1.0/subscriptions/61901f18-d50c-4d85-90d3-cb4670a440db/resourceGroups/cop28-rg/providers/Microsoft.MachineLearningServices/workspaces/cop28-ml-eastus'
+2023-10-24 09:08:45 +0000    3460 promptflow-runtime INFO     Running <function MlflowHelper.get_host_creds at 0x7f58ce39e160>, 5 more tries to go.
+2023-10-24 09:08:46 +0000    3460 promptflow-runtime INFO     Running <function SnapshotsClient.download_snapshot at 0x7f58c873e1f0>, 3 more tries to go.
+2023-10-24 09:08:46 +0000    3460 promptflow-runtime INFO     Get snapshot sas url for 27077d2a-3ce1-422b-b314-756b6789bbd6...
+2023-10-24 09:08:52 +0000    3460 promptflow-runtime INFO     Downloading snapshot 27077d2a-3ce1-422b-b314-756b6789bbd6 from uri {customer_content}...
+2023-10-24 09:08:52 +0000    3460 promptflow-runtime INFO     Downloaded file /service/app/46077/requests/cop28_default_20231024_130827_014348/27077d2a-3ce1-422b-b314-756b6789bbd6.zip with size 42556 for snapshot 27077d2a-3ce1-422b-b314-756b6789bbd6.
+2023-10-24 09:08:52 +0000    3460 promptflow-runtime INFO     Download snapshot 27077d2a-3ce1-422b-b314-756b6789bbd6 completed.
+2023-10-24 09:08:52 +0000    3460 promptflow-runtime INFO     Running <function prepare_data at 0x7f58caddd3a0>, 3 more tries to go.
+2023-10-24 09:08:53 +0000    3460 promptflow-runtime INFO     Resolve data from url finished in 0.39469699189066887 seconds
+2023-10-24 09:08:53 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:53 +0000    3460 promptflow-runtime INFO     Starting the aml run 'cop28_default_20231024_130827_014348'...
+2023-10-24 09:08:53 +0000    3460 execution          WARNING  Starting run without column mapping may lead to unexpected results. Please consult the following documentation for more information: https://microsoft.github.io/promptflow/how-to-guides/column-mapping.html.
+2023-10-24 09:08:53 +0000    3460 execution.bulk     INFO     Using fork, process count: 14
+2023-10-24 09:08:53 +0000    3505 execution          INFO     Process 3505 started.
+2023-10-24 09:08:53 +0000    3505 execution          INFO     Process 3505 received start signal message: start
+2023-10-24 09:08:53 +0000    3505 execution          INFO     Process 3505 sent ready signal message.
+2023-10-24 09:08:53 +0000    3523 execution          INFO     Process 3523 started.
+2023-10-24 09:08:53 +0000    3530 execution          INFO     Process 3530 started.
+2023-10-24 09:08:53 +0000    3533 execution          INFO     Process 3533 started.
+2023-10-24 09:08:54 +0000    3523 execution          INFO     Process 3523 received start signal message: start
+2023-10-24 09:08:53 +0000    3532 execution          INFO     Process 3532 started.
+2023-10-24 09:08:54 +0000    3556 execution          INFO     Process 3556 started.
+2023-10-24 09:08:54 +0000    3523 execution          INFO     Process 3523 sent ready signal message.
+2023-10-24 09:08:54 +0000    3553 execution          INFO     Process 3553 started.
+2023-10-24 09:08:54 +0000    3530 execution          INFO     Process 3530 received start signal message: start
+2023-10-24 09:08:53 +0000    3460 execution          INFO     Process 3505 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3546 execution          INFO     Process 3546 started.
+2023-10-24 09:08:54 +0000    3542 execution          INFO     Process 3542 started.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process 3523 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3533 execution          INFO     Process 3533 received start signal message: start
+2023-10-24 09:08:54 +0000    3565 execution          INFO     Process 3565 started.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:2, Process id: 3505, Line number: 0 start execution.
+2023-10-24 09:08:54 +0000    3505 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3530 execution          INFO     Process 3530 sent ready signal message.
+2023-10-24 09:08:54 +0000    3523 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:4, Process id: 3523, Line number: 1 start execution.
+2023-10-24 09:08:54 +0000    3533 execution          INFO     Process 3533 sent ready signal message.
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3569 execution          INFO     Process 3569 started.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process 3530 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3546 execution          INFO     Process 3546 received start signal message: start
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:5, Process id: 3530, Line number: 2 start execution.
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3530 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3553 execution          INFO     Process 3553 received start signal message: start
+2023-10-24 09:08:54 +0000    3532 execution          INFO     Process 3532 received start signal message: start
+2023-10-24 09:08:54 +0000    3574 execution          INFO     Process 3574 started.
+2023-10-24 09:08:54 +0000    3556 execution          INFO     Process 3556 received start signal message: start
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process 3533 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3546 execution          INFO     Process 3546 sent ready signal message.
+2023-10-24 09:08:54 +0000    3567 execution          INFO     Process 3567 started.
+2023-10-24 09:08:54 +0000    3532 execution          INFO     Process 3532 sent ready signal message.
+2023-10-24 09:08:54 +0000    3542 execution          INFO     Process 3542 received start signal message: start
+2023-10-24 09:08:54 +0000    3553 execution          INFO     Process 3553 sent ready signal message.
+2023-10-24 09:08:54 +0000    3556 execution          INFO     Process 3556 sent ready signal message.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process 3546 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3565 execution          INFO     Process 3565 received start signal message: start
+2023-10-24 09:08:54 +0000    3533 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3542 execution          INFO     Process 3542 sent ready signal message.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process 3532 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3565 execution          INFO     Process 3565 sent ready signal message.
+2023-10-24 09:08:54 +0000    3569 execution          INFO     Process 3569 received start signal message: start
+2023-10-24 09:08:54 +0000    3546 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3532 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process 3556 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3569 execution          INFO     Process 3569 sent ready signal message.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process 3553 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3556 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:8, Process id: 3533, Line number: 3 start execution.
+2023-10-24 09:08:54 +0000    3574 execution          INFO     Process 3574 received start signal message: start
+2023-10-24 09:08:54 +0000    3553 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3567 execution          INFO     Process 3567 received start signal message: start
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process 3542 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3574 execution          INFO     Process 3574 sent ready signal message.
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3567 execution          INFO     Process 3567 sent ready signal message.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:9, Process id: 3546, Line number: 4 start execution.
+2023-10-24 09:08:54 +0000    3542 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process 3565 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:7, Process id: 3565, Line number: 9 start execution.
+2023-10-24 09:08:54 +0000    3565 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process 3569 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:11, Process id: 3556, Line number: 6 start execution.
+2023-10-24 09:08:54 +0000    3569 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:12, Process id: 3553, Line number: 7 start execution.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process 3574 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process 3567 get ready_msg: ready
+2023-10-24 09:08:54 +0000    3574 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3567 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:13, Process id: 3567, Line number: 12 start execution.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:6, Process id: 3532, Line number: 5 start execution.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:14, Process id: 3569, Line number: 10 start execution.
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:15, Process id: 3574, Line number: 11 start execution.
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:10, Process id: 3542, Line number: 8 start execution.
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3505 execution          WARNING  [embedding in line 0 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3530 execution          WARNING  [embedding in line 2 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3546 execution          WARNING  [embedding in line 4 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3523 execution          WARNING  [embedding in line 1 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3505 execution          ERROR    Node embedding in line 0 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
 
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3530 execution          ERROR    Node embedding in line 2 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3546 execution          ERROR    Node embedding in line 4 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3523 execution          ERROR    Node embedding in line 1 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3505 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3530 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3546 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3523 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3556 execution          WARNING  [embedding in line 6 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3533 execution          WARNING  [embedding in line 3 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3553 execution          WARNING  [embedding in line 7 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3556 execution          ERROR    Node embedding in line 6 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3533 execution          ERROR    Node embedding in line 3 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3532 execution          WARNING  [embedding in line 5 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3553 execution          ERROR    Node embedding in line 7 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3556 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:2, Process id: 3505, Line number: 0 completed.
+2023-10-24 09:08:54 +0000    3542 execution          WARNING  [embedding in line 8 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3533 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3532 execution          ERROR    Node embedding in line 5 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3542 execution          ERROR    Node embedding in line 8 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3553 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:9, Process id: 3546, Line number: 4 completed.
+2023-10-24 09:08:54 +0000    3532 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3460 execution.bulk     INFO     Finished 4 / 14 lines.
+2023-10-24 09:08:54 +0000    3542 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3505 execution          INFO     Start to run 8 nodes with concurrency level 2.
+2023-10-24 09:08:54 +0000    3569 execution          WARNING  [embedding in line 10 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3565 execution          WARNING  [embedding in line 9 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:5, Process id: 3530, Line number: 2 completed.
+2023-10-24 09:08:54 +0000    3460 execution.bulk     INFO     Finished 4 / 14 lines.
+2023-10-24 09:08:54 +0000    3569 execution          ERROR    Node embedding in line 10 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3565 execution          ERROR    Node embedding in line 9 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:4, Process id: 3523, Line number: 1 completed.
+2023-10-24 09:08:54 +0000    3460 execution.bulk     INFO     Finished 5 / 14 lines.
+2023-10-24 09:08:54 +0000    3569 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3565 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3574 execution          WARNING  [embedding in line 11 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:2, Process id: 3505, Line number: 13 start execution.
+2023-10-24 09:08:54 +0000    3567 execution          WARNING  [embedding in line 12 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:54 +0000    3460 execution.bulk     INFO     Finished 6 / 14 lines.
+2023-10-24 09:08:54 +0000    3574 execution          ERROR    Node embedding in line 11 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:8, Process id: 3533, Line number: 3 completed.
+2023-10-24 09:08:54 +0000    3460 promptflow-runtime INFO     Flow run is not terminated, skip persisting flow run record.
+2023-10-24 09:08:54 +0000    3567 execution          ERROR    Node embedding in line 12 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:54 +0000    3574 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3567 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:54 +0000    3460 execution.bulk     INFO     Finished 9 / 14 lines.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:12, Process id: 3553, Line number: 7 completed.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:6, Process id: 3532, Line number: 5 completed.
+2023-10-24 09:08:55 +0000    3460 execution.bulk     INFO     Finished 10 / 14 lines.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:10, Process id: 3542, Line number: 8 completed.
+2023-10-24 09:08:55 +0000    3460 execution.bulk     INFO     Finished 12 / 14 lines.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:11, Process id: 3556, Line number: 6 completed.
+2023-10-24 09:08:55 +0000    3460 execution.bulk     INFO     Finished 13 / 14 lines.
+2023-10-24 09:08:54 +0000    3460 execution          INFO     Process name: Process-72:7, Process id: 3565, Line number: 9 completed.
+2023-10-24 09:08:55 +0000    3460 execution.bulk     INFO     Finished 13 / 14 lines.
+2023-10-24 09:08:55 +0000    3460 execution          INFO     Process name: Process-72:14, Process id: 3569, Line number: 10 completed.
+2023-10-24 09:08:55 +0000    3460 execution.bulk     INFO     Finished 13 / 14 lines.
+2023-10-24 09:08:55 +0000    3460 execution          INFO     Process name: Process-72:15, Process id: 3574, Line number: 11 completed.
+2023-10-24 09:08:55 +0000    3460 execution.bulk     INFO     Finished 13 / 14 lines.
+2023-10-24 09:08:55 +0000    3460 execution          INFO     Process name: Process-72:13, Process id: 3567, Line number: 12 completed.
+2023-10-24 09:08:55 +0000    3460 execution.bulk     INFO     Finished 13 / 14 lines.
+2023-10-24 09:08:55 +0000    3460 execution.bulk     INFO     Finished 13 / 14 lines.
+2023-10-24 09:08:55 +0000    3505 execution          WARNING  [embedding in line 13 (index starts from 0)] stderr> Exception occurs: InvalidRequestError: Resource not found
+2023-10-24 09:08:55 +0000    3505 execution          ERROR    Node embedding in line 13 failed. Exception: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors].
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py", line 33, in create
+    response = super().create(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py", line 763, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.InvalidRequestError: Resource not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 126, in invoke_tool_with_cache
+    result = self.invoke_tool(f, args, kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 170, in invoke_tool
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py", line 164, in invoke_tool
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 176, in wrapper
+    raise WrappedOpenAIError(e)
+promptflow.tools.exception.WrappedOpenAIError: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:08:55 +0000    3505 execution          ERROR    One node execution failed, cancel all running tasks. embedding.
+2023-10-24 09:08:55 +0000    3460 execution          INFO     Process name: Process-72:2, Process id: 3505, Line number: 13 completed.
+2023-10-24 09:08:55 +0000    3460 execution.bulk     INFO     Finished 14 / 14 lines.
+2023-10-24 09:08:55 +0000    3460 execution          INFO     Process 2 queue empty, exit.
+2023-10-24 09:08:55 +0000    3460 execution          INFO     Process 9 queue empty, exit.
+2023-10-24 09:08:55 +0000    3460 execution          INFO     Process 3 queue empty, exit.
+2023-10-24 09:08:55 +0000    3460 execution          INFO     Process 5 queue empty, exit.
+2023-10-24 09:08:56 +0000    3460 execution          INFO     Process 6 queue empty, exit.
+2023-10-24 09:08:56 +0000    3460 execution          INFO     Process 8 queue empty, exit.
+2023-10-24 09:08:56 +0000    3460 execution          INFO     Process 4 queue empty, exit.
+2023-10-24 09:08:56 +0000    3460 execution          INFO     Process 10 queue empty, exit.
+2023-10-24 09:08:56 +0000    3460 execution          INFO     Process 7 queue empty, exit.
+2023-10-24 09:08:56 +0000    3460 execution          INFO     Process 13 queue empty, exit.
+2023-10-24 09:08:56 +0000    3460 execution          INFO     Process 12 queue empty, exit.
+2023-10-24 09:08:56 +0000    3460 execution          INFO     Process 11 queue empty, exit.
+2023-10-24 09:08:56 +0000    3460 execution          INFO     Process 1 queue empty, exit.
+2023-10-24 09:09:05 +0000      62 promptflow-runtime INFO     Running <function RunHistoryClient.get_run at 0x7f58d778e8b0>, 3 more tries to go.
+2023-10-24 09:09:05 +0000      62 promptflow-runtime INFO     Running <function RunHistoryClient.get_run at 0x7f58d778e820>, 3 more tries to go.
+2023-10-24 09:09:05 +0000      62 promptflow-runtime INFO     Run cop28_default_20231024_130827_014348 is in progress, Execution status: Running
+2023-10-24 09:08:53 +0000    3510 execution          INFO     Process 3510 started.
+2023-10-24 09:09:12 +0000    3510 execution          INFO     Process 3510 received start signal message: start
+2023-10-24 09:09:12 +0000    3510 execution          INFO     Process 3510 sent ready signal message.
+2023-10-24 09:09:12 +0000    3460 execution          INFO     Process 3510 get ready_msg: ready
+2023-10-24 09:09:13 +0000    3460 execution          INFO     Process 0 queue empty, exit.
+2023-10-24 09:09:13 +0000    3460 execution          ERROR    14/14 flow run failed, indexes: [0,1,2,3,4,5,6,7,8,9,10,11,12,13], exception of index 0: OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]
+2023-10-24 09:09:16 +0000    3460 execution.bulk     INFO     Upload status summary metrics for run cop28_default_20231024_130827_014348 finished in 2.3038595891557634 seconds
+2023-10-24 09:09:16 +0000    3460 promptflow-runtime INFO     Successfully write run properties {"azureml.promptflow.total_tokens": 0} with run id 'cop28_default_20231024_130827_014348'
+2023-10-24 09:09:16 +0000    3460 execution.bulk     INFO     Upload RH properties for run cop28_default_20231024_130827_014348 finished in 0.10187241109088063 seconds
+2023-10-24 09:09:16 +0000    3460 promptflow-runtime INFO     Running <function AssetClient.create_unregistered_output at 0x7f58f0434310>, 3 more tries to go.
+2023-10-24 09:09:16 +0000    3460 promptflow-runtime INFO     Creating unregistered output Asset for Run cop28_default_20231024_130827_014348...
+2023-10-24 09:09:16 +0000    3460 promptflow-runtime INFO     Created debug_info Asset: azureml://locations/eastus/workspaces/e8e157d4-2fec-472c-9f4f-683719beab11/data/azureml_cop28_default_20231024_130827_014348_output_data_debug_info/versions/1
+2023-10-24 09:09:16 +0000    3460 promptflow-runtime INFO     Running <function AssetClient.create_unregistered_output at 0x7f58f0434310>, 3 more tries to go.
+2023-10-24 09:09:16 +0000    3460 promptflow-runtime INFO     Creating unregistered output Asset for Run cop28_default_20231024_130827_014348...
+2023-10-24 09:09:16 +0000    3460 promptflow-runtime INFO     Created flow_outputs output Asset: azureml://locations/eastus/workspaces/e8e157d4-2fec-472c-9f4f-683719beab11/data/azureml_cop28_default_20231024_130827_014348_output_data_flow_outputs/versions/1
+2023-10-24 09:09:16 +0000    3460 promptflow-runtime INFO     Running <function ArtifactClient.register_artifact at 0x7f58f04345e0>, 3 more tries to go.
+2023-10-24 09:09:16 +0000    3460 promptflow-runtime INFO     Creating Artifact for Run cop28_default_20231024_130827_014348...
+2023-10-24 09:09:17 +0000    3460 promptflow-runtime INFO     Created instance_results.jsonl Artifact.
+2023-10-24 09:09:17 +0000    3460 promptflow-runtime INFO     Running <function RunHistoryClient.patch_run at 0x7f58d778e550>, 3 more tries to go.
+2023-10-24 09:09:17 +0000    3460 promptflow-runtime INFO     Patching cop28_default_20231024_130827_014348...
+2023-10-24 09:09:17 +0000    3460 promptflow-runtime WARNING  [cop28_default_20231024_130827_014348] Run failed. Execution stackTrace: Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py", line 135, in wrapper
+    return func(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py", line 26, in embedding
+    return openai.Embedding.create(
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 91, in wrapper
+    return f(*args, **kwargs)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py", line 45, in wrapped_method
+    result = f(*args, **kwargs)
+  [REDACTED: External StackTrace]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/flow_executor.py", line 893, in _exec
+    output, nodes_outputs = self._traverse_nodes(inputs, context)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/flow_executor.py", line 970, in _traverse_nodes
+    nodes_outputs, bypassed_nodes = self._submit_to_scheduler(context, inputs, batch_nodes)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/flow_executor.py", line 990, in _submit_to_scheduler
+    return FlowNodesScheduler(self._tools_manager).execute(context, inputs, nodes, self._node_concurrency)
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/_flow_nodes_scheduler.py", line 59, in execute
+    raise e
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/_flow_nodes_scheduler.py", line 48, in execute
+    dag_manager.complete_nodes(self._collect_outputs(completed_futures))
+  File "/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/_flow_nodes_scheduler.py", line 77, in _collect_outputs
+    each_node_result = each_future.result()
+  [REDACTED: External StackTrace]
+
+2023-10-24 09:09:17 +0000    3460 promptflow-runtime INFO     Ending the aml run 'cop28_default_20231024_130827_014348' with status 'Completed'...
+2023-10-24 09:09:20 +0000      62 promptflow-runtime INFO     Process 3460 finished
+2023-10-24 09:09:20 +0000      62 promptflow-runtime INFO     [62] Child process finished!
+2023-10-24 09:09:20 +0000      62 promptflow-runtime INFO     [cop28_default_20231024_130827_014348] End processing bulk run
+2023-10-24 09:09:20 +0000      62 promptflow-runtime ERROR    Submit flow request failed Code: 400 InnerException type: InvalidRequestError Exception type hierarchy: UserError/OpenAIError/InvalidRequestError
+======= Run Summary =======
+Run name: "cop28_default_20231024_130827_014348"
+Run status: "Completed"
+Start time: "2023-10-24 09:08:53.546291+00:00"
+Duration: "0:00:24.269194"
+Run url: "https://ml.azure.com/prompts/flow/bulkrun/run/cop28_default_20231024_130827_014348/details?wsid=/subscriptions/61901f18-d50c-4d85-90d3-cb4670a440db/resourceGroups/cop28-rg/providers/Microsoft.MachineLearningServices/workspaces/cop28-ml-eastus&flight=promptfilestorage,PFSourceRun=false"
+
+{
+    "name": "cop28_default_20231024_130827_014348",
+    "created_on": "2023-10-24T09:08:43.172906+00:00",
+    "status": "Completed",
+    "display_name": "cop28-variant_0-202310240908",
+    "description": null,
+    "tags": {},
+    "properties": {
+        "azureml.promptflow.runtime_name": "DEFAULT",
+        "azureml.promptflow.runtime_version": "20230927.v2",
+        "azureml.promptflow.definition_file_name": "flow.dag.yaml",
+        "azureml.promptflow.session_id": "ffac996dbd8e40442ab15914fbb608bf008a31eef9f50b36",
+        "azureml.promptflow.flow_lineage_id": "3513162fa3a38986c6c262ccefa17ee62eeba90fd5f504ae1d36388e9bdb6708",
+        "azureml.promptflow.flow_definition_datastore_name": "workspaceblobstore",
+        "azureml.promptflow.flow_definition_blob_path": "LocalUpload/56afd151161293b964e60ad42d59c24d/cop28/flow.dag.yaml",
+        "azureml.promptflow.snapshot_id": "27077d2a-3ce1-422b-b314-756b6789bbd6",
+        "_azureml.evalutation_run": "promptflow.BatchRun",
+        "azureml.promptflow.total_tokens": "0"
+    },
+    "creation_context": {
+        "userObjectId": "2f0e3012-852a-4999-abe0-66a26dd0dc8e",
+        "userPuId": "10032002186D1253",
+        "userIdp": "https://sts.windows.net/72f988bf-86f1-41af-91ab-2d7cd011db47/",
+        "userAltSecId": "5::10030000801BBF34",
+        "userIss": "https://sts.windows.net/16b3c013-d300-468d-ac64-7eda0820b6d3/",
+        "userTenantId": "16b3c013-d300-468d-ac64-7eda0820b6d3",
+        "userName": "Agustin Mantaras Rodriguez",
+        "upn": null
+    },
+    "start_time": "2023-10-24T09:08:53.546291+00:00",
+    "end_time": "2023-10-24T09:09:17.815485+00:00",
+    "duration": "00:00:24.2691940",
+    "portal_url": "https://ml.azure.com/prompts/flow/bulkrun/run/cop28_default_20231024_130827_014348/details?wsid=/subscriptions/61901f18-d50c-4d85-90d3-cb4670a440db/resourceGroups/cop28-rg/providers/Microsoft.MachineLearningServices/workspaces/cop28-ml-eastus&flight=promptfilestorage,PFSourceRun=false",
+    "data": "azureml://datastores/workspaceblobstore/paths/LocalUpload/a11da26bc6fa343f8921b482c43e766d/data.jsonl",
+    "data_portal_url": "https://ml.azure.com/data/datastore/workspaceblobstore/edit?wsid=/subscriptions/61901f18-d50c-4d85-90d3-cb4670a440db/resourceGroups/cop28-rg/providers/Microsoft.MachineLearningServices/workspaces/cop28-ml-eastus&activeFilePath=LocalUpload/a11da26bc6fa343f8921b482c43e766d/data.jsonl#browseTab",
+    "output": "azureml://locations/eastus/workspaces/e8e157d4-2fec-472c-9f4f-683719beab11/data/azureml_cop28_default_20231024_130827_014348_output_data_flow_outputs/versions/1",
+    "output_portal_url": "https://ml.azure.com/data/azureml_cop28_default_20231024_130827_014348_output_data_flow_outputs/1/details?wsid=/subscriptions/61901f18-d50c-4d85-90d3-cb4670a440db/resourceGroups/cop28-rg/providers/Microsoft.MachineLearningServices/workspaces/cop28-ml-eastus",
+    "error": {
+        "error": {
+            "code": "UserError",
+            "severity": null,
+            "message": "OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]",
+            "messageFormat": "{\"totalChildRuns\": 14, \"userErrorChildRuns\": 14, \"systemErrorChildRuns\": 0, \"errorDetails\": [{\"code\": \"UserError/OpenAIError/InvalidRequestError\", \"messageFormat\": \"\", \"count\": 14}]}",
+            "messageParameters": {},
+            "referenceCode": "Tool/promptflow.tools.embedding",
+            "detailsUri": null,
+            "target": null,
+            "details": [],
+            "innerError": {
+                "code": "OpenAIError",
+                "innerError": {
+                    "code": "InvalidRequestError",
+                    "innerError": null
+                }
+            },
+            "debugInfo": {
+                "type": "WrappedOpenAIError",
+                "message": "OpenAI API hits InvalidRequestError: Resource not found [Error reference: https://platform.openai.com/docs/guides/error-codes/api-errors]",
+                "stackTrace": "\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/flow_executor.py\", line 893, in _exec\n    output, nodes_outputs = self._traverse_nodes(inputs, context)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/flow_executor.py\", line 970, in _traverse_nodes\n    nodes_outputs, bypassed_nodes = self._submit_to_scheduler(context, inputs, batch_nodes)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/flow_executor.py\", line 990, in _submit_to_scheduler\n    return FlowNodesScheduler(self._tools_manager).execute(context, inputs, nodes, self._node_concurrency)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/_flow_nodes_scheduler.py\", line 59, in execute\n    raise e\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/_flow_nodes_scheduler.py\", line 48, in execute\n    dag_manager.complete_nodes(self._collect_outputs(completed_futures))\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/_flow_nodes_scheduler.py\", line 77, in _collect_outputs\n    each_node_result = each_future.result()\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/concurrent/futures/_base.py\", line 439, in result\n    return self.__get_result()\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/concurrent/futures/_base.py\", line 391, in __get_result\n    raise self._exception\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/concurrent/futures/thread.py\", line 58, in run\n    result = self.fn(*self.args, **self.kwargs)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/_flow_nodes_scheduler.py\", line 106, in _exec_single_node_in_thread\n    result = f(**kwargs)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/tool.py\", line 57, in new_f\n    return tool_invoker.invoke_tool(f, *args, **kwargs)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/executor/_tool_invoker.py\", line 19, in invoke_tool\n    return cur_flow.invoke_tool_with_cache(f, argnames, args, kwargs)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py\", line 126, in invoke_tool_with_cache\n    result = self.invoke_tool(f, args, kwargs)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py\", line 170, in invoke_tool\n    raise e\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/flow_execution_context.py\", line 164, in invoke_tool\n    return f(*args, **kwargs)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py\", line 176, in wrapper\n    raise WrappedOpenAIError(e)\n",
+                "innerException": {
+                    "type": "InvalidRequestError",
+                    "message": "Resource not found",
+                    "stackTrace": "Traceback (most recent call last):\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/common.py\", line 135, in wrapper\n    return func(*args, **kwargs)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/tools/embedding.py\", line 26, in embedding\n    return openai.Embedding.create(\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py\", line 91, in wrapper\n    return f(*args, **kwargs)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/promptflow/_core/openai_injector.py\", line 45, in wrapped_method\n    result = f(*args, **kwargs)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/embedding.py\", line 33, in create\n    response = super().create(*args, **kwargs)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_resources/abstract/engine_api_resource.py\", line 153, in create\n    response, _, api_key = requestor.request(\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py\", line 298, in request\n    resp, got_stream = self._interpret_response(result, stream)\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py\", line 700, in _interpret_response\n    self._interpret_response_line(\n  File \"/azureml-envs/prompt-flow/runtime/lib/python3.9/site-packages/openai/api_requestor.py\", line 763, in _interpret_response_line\n    raise self.handle_error_response(\n",
+                    "innerException": null,
+                    "data": null,
+                    "errorResponse": null
+                },
+                "data": null,
+                "errorResponse": null
+            },
+            "additionalInfo": null
+        },
+        "correlation": null,
+        "environment": null,
+        "location": null,
+        "time": "2023-10-24T09:09:17.427923+00:00",
+        "componentName": "promptflow-runtime/20230927.v2 Designer/1.0 promptflow-cli/0.1.0b5 promptflow-sdk/0.1.0b5 azsdk-python-azuremachinelearningdesignerserviceclient/unknown Python/3.11.6 (Windows-10-10.0.22621-SP0) promptflow/0.1.0b7"
+    }
+}
