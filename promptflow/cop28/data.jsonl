@@ -1,3 +1,14 @@
-{"url": "https://www.youtube.com/watch?v=kYqRtjDBci8", "answer": "Channel", "evidence": "Both"}
-{"url": "https://arxiv.org/abs/2307.04767", "answer": "Academic", "evidence": "Both"}
-{"url": "https://play.google.com/store/apps/details?id=com.twitter.android", "answer": "App", "evidence": "Both"}
+{"chat_history": "", "chat_input": "How does Microsoft determine the total emissions for a specific datacenter over a given time period?"}
+{"chat_history": "", "chat_input": "Does Microsoft quantify customer-specific emissions for Azure services and regions? If so, how?"}
+{"chat_history": "", "chat_input": "How does Microsoft look at material circularity?"}
+{"chat_history": "", "chat_input": "How does Microsoft intend to empower its customers in relation to emissions reduction?"}
+{"chat_history": "", "chat_input": "What components of the value chain are considered within Microsoft Cloud computing services?"}
+{"chat_history": "", "chat_input": "What are the key stages of the value chain for Microsoft's emissions consideration?"}
+{"chat_history": "", "chat_input": "What is Microsoft's goal regarding emissions reduction as a tech company? What about carbon offsets?"}
+{"chat_history": "", "chat_input": "What tools and processes is Microsoft using to track its emissions reduction progress?"}
+{"chat_history": "", "chat_input": "In 2022, what percentage of Microsoft's operational emissions was represented by Scope 2 (electricity consumption) under the location-based and market-based methods?"}
+{"chat_history": "", "chat_input": "How does Microsoft account for electricity consumption in their datacenters and office buildings (Scope 2) when calculating emissions?"}
+{"chat_history": "", "chat_input": "How does Microsoft calculate emissions from product-related electricity consumption (Scope 3 Category 11), and is there a difference between the standard GHGP approach and Microsoft's methodology?"}
+{"chat_history": "", "chat_input": "What challenges are associated with the current sources of electricity-related carbon data, and how do these challenges impact the accuracy of emissions estimates?"}
+{"chat_history": "", "chat_input": "What is the primary source of Microsoft's operational carbon emissions, and what has been the focus of their carbon reduction efforts?"}
+{"chat_history": "", "chat_input": "What challenges does Microsoft face when collecting data on supply chain emissions (Scope 3)?"}

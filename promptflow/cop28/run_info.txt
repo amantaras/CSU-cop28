@@ -1,0 +1,7 @@
+Create run failed with FlowRequestException: Calling submit_bulk_run failed with request id: 1b2b5a9b-c727-4414-a096-5faf1f1c6dc0 
+Status code: 400 
+Reason: Not found input index_name for node search_index in flow when try to do connection override, please 
+Error message: (UserError) Not found input index_name for node search_index in flow when try to do connection override, please make sure you have provided correct connection.
+Code: UserError
+Message: Not found input index_name for node search_index in flow when try to do connection override, please make sure you have provided correct connection. 
+
