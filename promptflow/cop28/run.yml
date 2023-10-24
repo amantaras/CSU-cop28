@@ -1,0 +1,22 @@
+$schema: https://azuremlschemas.azureedge.net/promptflow/latest/Run.schema.json
+flow: .
+data: data.jsonl
+
+# define cloud resource
+runtime: DEFAULT
+
+connections:
+  ContentSafety:
+    connection: cop28ContentSafety
+    #deployment_name: cop28-content-safety
+  embedding:
+    connection: cop28cognitive search connection
+    deployment_name: text-embedding-ada-002
+  search_index:
+    index_name: microsoftdataindex
+  chat_with_context:
+    connection: cop28-openai
+    deployment_name: gpt-35-turbo
+
+
+    
