@@ -1,0 +1,145 @@
+inputs:
+  chat_history:
+    type: list
+    default:
+    - inputs:
+        chat_input: what is Microsoft strategy for suitainability?
+      outputs:
+        chat_output: Microsoft's sustainability strategy involves setting commitments based on science, considering all positions of influence, establishing sustainability as part of culture, making it central to business, ensuring governance and accountability, and reporting on everything. They aim to be a carbon negative, water positive, zero waste company by 2030 and are enacting a five-part strategy to achieve this, including increasing efficiency, building markets, forging partnerships, improving measurement, and advocating for policy. They also invest in green software engineering, science and research, and sustainable AI.
+        line_number: 0
+    - inputs:
+        chat_input: why carbon is important?
+      outputs:
+        chat_output: Carbon is important for several reasons. It is essential to life on Earth as it is the basis of organic chemistry and the building block for all living things. It is also a significant component of the Earth's atmosphere, where it plays a crucial role in regulating the planet's temperature through the carbon cycle. However, human activities, such as the burning of fossil fuels and deforestation, are causing an imbalance in the carbon cycle, leading to an increase of carbon in the atmosphere and contributing to global climate change.
+        line_number: 0
+    is_chat_input: false
+    is_chat_history: true
+  chat_input:
+    type: string
+    default: 'why reducing carbon emissions help the planet? '
+    is_chat_input: true
+outputs:
+  chat_output:
+    type: string
+    reference: ${Final_Answer.output}
+    evaluation_only: false
+    is_chat_output: true
+nodes:
+- name: ContentSafety
+  type: python
+  source:
+    type: package
+    tool: content_safety_text.tools.content_safety_text_tool.analyze_text
+  inputs:
+    connection: cop28ContentSafety
+    hate_category: high_sensitivity
+    self_harm_category: high_sensitivity
+    sexual_category: high_sensitivity
+    text: ${inputs.chat_input}
+    violence_category: high_sensitivity
+  activate:
+    when: ""
+    is: ""
+  aggregation: false
+- name: get_last_three_messages_from_history
+  type: python
+  source:
+    type: code
+    path: get_last_three_messages_from_history.py
+  inputs:
+    chat_history: ${inputs.chat_history}
+  aggregation: false
+- name: Extract_Suggested_Action_from_content_safety
+  type: python
+  source:
+    type: code
+    path: Extract_Suggested_Action_from_content_dafety.py
+  inputs:
+    safety_result: ${ContentSafety.output}
+  aggregation: false
+- name: embedding
+  type: python
+  source:
+    type: package
+    tool: promptflow.tools.embedding.embedding
+  inputs:
+    connection: cop28-openai
+    deployment_name: text-embedding-ada-002
+    input: ${inputs.chat_input}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+- name: search_index
+  type: python
+  source:
+    type: package
+    tool: promptflow_vectordb.tool.vector_db_lookup.VectorDBLookup.search
+  inputs:
+    connection: cop28cognitive search connection
+    index_name: microsoftdataindex
+    search_filters: ""
+    search_params: ""
+    text_field: ""
+    vector_field: content_vector_open_ai
+    top_k: 5
+    vector: ${embedding.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+- name: generate_prompt_context
+  type: python
+  source:
+    type: code
+    path: generate_prompt_context.py
+  inputs:
+    search_result: ${search_index.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+- name: chat_with_context
+  type: llm
+  source:
+    type: code
+    path: chat_with_context.jinja2
+  inputs:
+    deployment_name: gpt-35-turbo
+    temperature: 0.9
+    top_p: 1
+    stop: ""
+    max_tokens: 400
+    presence_penalty: 0
+    frequency_penalty: 0
+    logit_bias: ""
+    prompt_text: ${Prompt_variants.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  api: chat
+  provider: AzureOpenAI
+  connection: cop28-openai
+  module: promptflow.tools.aoai
+  aggregation: false
+- name: Final_Answer
+  type: python
+  source:
+    type: code
+    path: Final_Answer.py
+  inputs:
+    llm_answer: ${chat_with_context.output}
+    safety_result: ${Extract_Suggested_Action_from_content_safety.output}
+  aggregation: false
+- name: Prompt_variants
+  type: prompt
+  source:
+    type: code
+    path: Prompt_variants.jinja2
+  inputs:
+    chat_history: ${get_last_three_messages_from_history.output}
+    chat_input: ${inputs.chat_input}
+    contexts: ${generate_prompt_context.output}
+  aggregation: false
+environment:
+  python_requirements_txt: requirements.txt

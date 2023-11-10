@@ -1,128 +1,287 @@
 id: bring_your_own_data_chat_qna
 name: Bring Your Own Data Chat QnA
-environment:
-  python_requirements_txt: requirements.txt
 inputs:
   chat_history:
     type: list
     default:
     - inputs:
-        chat_input: How does Microsoft determine the total emissions for a specific
-          datacenter over a given time period?
+        chat_input: what is Microsoft strategy for suitainability?
       outputs:
-        chat_output: Microsoft uses a market-based method that includes consideration of
-          contractual arrangements under which it procures power from specific
-          suppliers or sources, such as renewable energy, to determine the total
-          emissions for a specific datacenter over a given time period. They
-          also recalculate emissions for improved accuracy and have internal
-          criteria to provide an objective basis for measuring and reporting
-          metrics.
+        chat_output: Microsoft's sustainability strategy involves setting commitments
+          based on science, considering all positions of influence, establishing
+          sustainability as part of culture, making it central to business,
+          ensuring governance and accountability, and reporting on everything.
+          They aim to be a carbon negative, water positive, zero waste company
+          by 2030 and are enacting a five-part strategy to achieve this,
+          including increasing efficiency, building markets, forging
+          partnerships, improving measurement, and advocating for policy. They
+          also invest in green software engineering, science and research, and
+          sustainable AI.
         line_number: 0
     - inputs:
-        chat_input: Does Microsoft quantify customer-specific emissions for Azure
-          services and regions? If so, how?
+        chat_input: why carbon is important?
       outputs:
-        chat_output: Yes, Microsoft quantifies customer-specific emissions for Azure
-          services and regions using the Emissions Impact Dashboard. This tool
-          estimates Microsoft's direct and indirect carbon emissions related to
-          a customer's cloud usage, as well as the emissions customers have
-          avoided by running workloads in the cloud rather than on-premises. The
-          calculations are limited to Microsoft's datacenter emissions
-          associated with commercial customer usage of Azure services and do not
-          include usage associated with national cloud deployments.
+        chat_output: Carbon is important for several reasons. It is essential to life on
+          Earth as it is the basis of organic chemistry and the building block
+          for all living things. It is also a significant component of the
+          Earth's atmosphere, where it plays a crucial role in regulating the
+          planet's temperature through the carbon cycle. However, human
+          activities, such as the burning of fossil fuels and deforestation, are
+          causing an imbalance in the carbon cycle, leading to an increase of
+          carbon in the atmosphere and contributing to global climate change.
         line_number: 0
     - inputs:
-        chat_input: How does Microsoft look at material circularity?
+        chat_input: "why reducing carbon emissions help the planet? "
       outputs:
-        chat_output: Microsoft looks at material circularity by following a circular
-          approach to materials management, which involves reducing the amount
-          of materials needed, responsibly sourcing materials, increasing the
-          use of recycled and recyclable content, designing out waste, and
-          keeping products and materials in use longer through reuse and repair.
-          They also work with suppliers on more sustainable material innovations
-          and have developed a patent-pending Intelligent Disposition and
-          Routing System to establish and execute a zero waste plan for their
-          cloud hardware assets.
+        chat_output: Reducing carbon emissions helps the planet because carbon dioxide
+          is a significant greenhouse gas that contributes to global climate
+          change. By reducing carbon emissions, we can slow down global warming,
+          decrease the frequency and intensity of extreme weather events,
+          preserve biodiversity, and protect human health and well-being. It is
+          crucial to reduce carbon emissions to prevent further damage to the
+          planet and ensure a sustainable future for generations to come.
         line_number: 0
     - inputs:
-        chat_input: In 2022, what percentage of Microsoft's operational emissions was
-          represented by Scope 2 (electricity consumption) under the
-          location-based and market-based methods?
+        chat_input: can you give me tips to travel sustainable?
       outputs:
-        chat_output: The 2022 Microsoft Environmental Sustainability Report indicates
-          that in FY22, Microsoft's Scope 2 emissions under the location-based
-          method were approximately 1.07%, and under the market-based method
-          were approximately 2.22%, of the company's total emissions.
+        chat_output: >-
+          Yes, here are some tips to travel sustainably:
+
+          1. Choose environmentally-friendly accommodations and transportation, such as eco-lodges and public transit.
+
+          2. Pack light, as heavier luggage consumes more fuel during transportation.
+
+          3. Bring a reusable water bottle and avoid single-use plastic bottles. 
+
+          4. Eat locally-sourced, seasonal, and plant-based meals.
+
+          5. Avoid waste by carrying a reusable bag, using reusable utensils, and avoiding excessive packaging.
+
+          6. Respect local culture and natural resources by engaging in sustainable tourism practices.
+
+          7. Offset your carbon footprint through programs that invest in renewable energy, reforestation, or other environmentally-friendly projects.
+
+          Remember that small actions can make a big impact when it comes to sustainable travel.
+        line_number: 0
+    - inputs:
+        chat_input: give me an example of sustainable travelling
+      outputs:
+        chat_output: An example of sustainable traveling is backpacking or cycling
+          instead of driving or flying. It reduces carbon emissions, promotes
+          physical activity, and allows travelers to experience local culture
+          and nature up close. Additionally, staying in eco-lodges or camping
+          sites that value sustainable practices, such as using renewable
+          energy, composting, and minimizing waste, is another example of
+          sustainable travel.
+        line_number: 0
+    - inputs:
+        chat_input: give me an example of sustainable travelling
+      outputs:
+        chat_output: An example of sustainable travel could be taking a train or bus
+          instead of flying to a destination. This mode of transportation has a
+          much lower carbon footprint compared to air travel and offers an
+          opportunity to view the surroundings. Additionally, the traveler can
+          choose to stay in environmentally-conscious accommodations, such as
+          eco-lodges or sustainable campsites, and support local businesses that
+          prioritize sustainability in their practices.
+        line_number: 0
+    - inputs:
+        chat_input: how is microsft supporting sutainability
+      outputs:
+        chat_output: Microsoft is committed to sustainability and has implemented
+          various initiatives to support this goal. They have set a target to be
+          carbon negative by 2030 and eliminate their historical carbon
+          emissions by 2050. To achieve this, they are investing in renewable
+          energy, implementing energy-efficient practices in their data centers
+          and offices, and promoting circularity in their products. Microsoft is
+          also developing green software to reduce the carbon footprint of their
+          applications and supporting ecosystem restoration projects in the
+          communities where their data centers are located. They work with
+          industry groups, governments, and customers to advance sustainability,
+          and publish an annual Environmental Sustainability Report to track
+          their progress.
+        line_number: 0
+    - inputs:
+        chat_input: What is the primary source of Microsoft's operational carbon
+          emissions, and what has been the focus of their carbon reduction
+          efforts?
+      outputs:
+        chat_output: According to their Environmental Sustainability Report, the primary
+          source of Microsoft's operational carbon emissions is Scope 2
+          emissions from electricity consumption, which accounted for more than
+          75% of their direct emissions in FY21. To reduce these emissions,
+          Microsoft is investing in renewable energy, implementing
+          energy-efficient practices in their data centers and offices, and
+          using AI to optimize their energy consumption. They are also working
+          with their suppliers to reduce their carbon footprint and promoting
+          circularity in their products to minimize waste. Additionally, they
+          are exploring new technologies such as hydrogen fuel cells and carbon
+          capture to further reduce their emissions.
         line_number: 0
     - inputs:
         chat_input: What challenges does Microsoft face when collecting data on supply
           chain emissions (Scope 3 Categories 1 and 2)?
       outputs:
         chat_output: Microsoft faces several challenges when collecting data on supply
-          chain emissions (Scope 3 Categories 1 and 2), including incomplete
-          data, inconsistent data quality, and evolving industry standards. They
-          have worked to address these issues by improving supplier engagement,
-          updating their Supplier Code of Conduct to include emissions data
-          disclosure and verification requirements, and developing new
-          methodologies, such as using product-specific emissions factors for
-          building materials, to improve data precision and granularity.
-          However, there is still work to be done to drive more consistent and
-          complete emissions reporting across Microsoft's supply chain.
-        line_number: 0
-    - inputs:
-        chat_input: What is the significance of helping develop markets for zero-carbon
-          electricity, lower-carbon transportation, and lower-carbon materials
-          in the context of decarbonization for Microsoft?
-      outputs:
-        chat_output: Developing markets for zero-carbon electricity, lower-carbon
-          transportation, and lower-carbon materials is significant for
-          Microsoft's decarbonization efforts because it helps to reduce
-          emissions across their value chain. By investing in sustainable
-          solutions and working with partners, Microsoft can influence the
-          development and adoption of low-carbon technologies and products,
-          which can reduce emissions from their own operations and those of
-          their suppliers and customers. These efforts also help to accelerate
-          the transition to a net-zero global economy and drive progress towards
-          achieving Microsoft's ambitious emissions reduction targets.
-        line_number: 0
-    - inputs:
-        chat_input: How does Microsoft partner with electricity, travel, and material
-          suppliers to fund indirect reductions in emissions?
-      outputs:
-        chat_output: Microsoft partners with electricity, travel, and material suppliers
-          to fund indirect reductions in emissions by requiring suppliers to
-          disclose GHG emissions and plans to reduce those emissions through
-          their Supplier Code of Conduct. They also collaborate with suppliers
-          to identify opportunities to shift to lower-carbon modes of
-          transportation and energy, reduce supply chain emissions, and explore
-          new sustainable innovations together. In some cases, Microsoft
-          provides direct financial support to suppliers to make low-carbon
-          investments, such as through the Microsoft Climate Innovation Fund.
-          These joint efforts help to reduce the carbon impact of Microsoft's
-          supply chain.
+          chain emissions, which fall under Scope 3 Categories 1 and 2. One of
+          the biggest challenges is the lack of consistent and comparable data
+          from their suppliers. This is compounded by the fact that emissions
+          data can be difficult and expensive to collect accurately, especially
+          for suppliers in developing countries. Furthermore, supply chains can
+          be complex, and it can be challenging to track emissions across
+          multiple tiers of suppliers. To address these challenges, Microsoft is
+          working to improve the quality of their data by encouraging suppliers
+          to disclose their emissions through their Supplier Code of Conduct and
+          implementing independent third-party assurance of emissions data. They
+          are also developing new methodologies to improve data granularity and
+          promote transparency in their reporting.
         line_number: 0
     - inputs:
         chat_input: What are the limitations of using expenditure and sales data as
           proxy data for estimating emissions?
       outputs:
         chat_output: Using expenditure and sales data as proxy data for estimating
-          emissions has several limitations, including the inability to capture
-          all aspects of emissions along the supply chain, the lack of
-          granularity in emissions data, and the potential for inaccuracies in
-          emissions factors, particularly for different regions and sectors.
-          Additionally, expenditure and sales data do not account for changes in
-          production efficiency or shifts to lower-carbon processes and
-          materials. Therefore, while these data sources can provide valuable
-          insights into emissions trends, they should be complemented with more
-          detailed emissions data to provide a more accurate picture of a
-          company's total emissions.
+          emissions has some limitations. Firstly, it assumes that all
+          activities have the same emission intensity or that emission intensity
+          is constant over time, which is not always the case. Secondly, it does
+          not account for emissions from imported goods or international
+          transportation, which can result in inaccurate estimates. Thirdly, it
+          may not capture emissions from all activities, such as those from
+          business travel or employees' commutes. Lastly, it can be challenging
+          to categorize expenditure and sales data into relevant sectors and
+          apply emission factors accurately. As a result, it is important to use
+          multiple methods and data sources to accurately estimate emissions.
+        line_number: 0
+    - inputs:
+        chat_input: What is embodied carbon, and how does it relate to Microsoft's
+          approach to carbon accounting?
+      outputs:
+        chat_output: Embodied carbon refers to the emissions associated with the
+          production, transportation, and disposal of materials used in the
+          construction or manufacture of a product or infrastructure.
+          Microsoft's approach to carbon accounting includes considering
+          embodied carbon as part of their product lifecycle assessments (LCAs)
+          to evaluate the full environmental impact of their products. They also
+          aim to reduce embodied carbon by using recycled materials and
+          designing products that are easy to repair, refurbish, and reuse.
+          Additionally, they are working with their suppliers to reduce embodied
+          carbon in their supply chains and exploring new circular economy
+          models to minimize waste and maximize resource efficiency.
+        line_number: 0
+    - inputs:
+        chat_input: What is Microsoft's stance on establishing a parallel reporting
+          structure for reflecting the climate value of indirect reduction
+          credits on Scope 3 emissions?
+      outputs:
+        chat_output: I'm sorry, but I cannot find any information in the given context
+          regarding Microsoft's stance on establishing a parallel reporting
+          structure for reflecting the climate value of indirect reduction
+          credits on Scope 3 emissions.
+        line_number: 0
+    - inputs:
+        chat_input: How does Microsoft partner with electricity, travel, and material
+          suppliers to fund indirect reductions in emissions?
+      outputs:
+        chat_output: Microsoft partners with electricity, travel, and material suppliers
+          to fund indirect reductions in emissions by engaging with them through
+          their Supplier Code of Conduct (SCoC) and purchasing commitments.
+          Since 2020, Microsoft's SCoC requires that suppliers disclose their
+          greenhouse gas emissions (GHG) and plans to reduce those emissions.
+          Microsoft also works with suppliers to shift to lower-carbon modes of
+          transport, resulting in a measurable emissions reduction. In addition,
+          Microsoft partners with suppliers to shift cargo from carbon-intensive
+          modes to lower-carbon modes of transport, such as ocean and rail,
+          resulting in a measurable emissions reduction. Moreover, they also
+          collaborate with suppliers to support the avoidance of CO2e savings,
+          which contributes to their indirect reductions in emissions.
+        line_number: 0
+    - inputs:
+        chat_input: What are market-based instruments, and how do they play a role in
+          achieving indirect emissions reductions for Microsoft?
+      outputs:
+        chat_output: Market-based instruments are mechanisms that allow companies to
+          purchase renewable energy or offsets, such as renewable energy credits
+          or carbon offsets, to reduce their emissions. They can play a role in
+          achieving indirect emissions reductions for Microsoft by allowing the
+          company to compensate for their own emissions by supporting the
+          development of renewable energy projects or funding emissions
+          reduction projects in other parts of the world. For example, Microsoft
+          has committed to purchasing 500,000 metric tons of carbon credits
+          annually through 2030, which will help to fund projects that reduce
+          emissions in other sectors or regions, ultimately contributing to
+          their indirect emissions reductions.
+        line_number: 0
+    - inputs:
+        chat_input: How does Microsoft determine the total emissions for a specific
+          datacenter over a given time period?
+      outputs:
+        chat_output: Microsoft determines the total emissions for a specific datacenter
+          over a given time period by using different methods, including
+          activity data collection and emissions factors. Activity data
+          collection involves measuring and tracking the amount of energy
+          consumed by the datacenter, including electricity from the grid and
+          any on-site fuels used for backup power generation. Emissions factors
+          are used to estimate the emissions associated with the energy
+          consumption, based on the type of fuel used and the location of the
+          datacenter. Microsoft also uses a market-based method that includes
+          consideration of contractual arrangements under which they procure
+          power from specific suppliers or sources, such as renewable energy.
+        line_number: 0
+    - inputs:
+        chat_input: Does Microsoft quantify customer-specific emissions for Azure
+          services and regions? If so, how?
+      outputs:
+        chat_output: Yes, Microsoft quantifies customer-specific emissions for Azure
+          services and regions through their Emissions Impact Dashboard for
+          Azure. This tool provides transparency into the emissions generated by
+          a customer's use of Microsoft cloud services, including Azure, and
+          estimates the emissions customers have avoided by running workloads in
+          the cloud rather than on-premises. The calculations are based on the
+          activity data collected from the Azure services used by the customer
+          and emissions factors specific to the region where the services are
+          located. The dashboard provides customers with the information they
+          need to report their Scope 3 emissions accurately and to make informed
+          decisions about their sustainability commitments.
+        line_number: 0
+    - inputs:
+        chat_input: How does Microsoft look at material circularity?
+      outputs:
+        chat_output: Microsoft looks at material circularity as an important component
+          of their overall sustainability strategy. They aim to keep materials
+          in use longer by designing products to be more durable and easier to
+          repair, refurbish, and recycle. Microsoft is progressively increasing
+          the use of recycled and recyclable materials in their products and
+          packaging. They also work with suppliers to ensure that the materials
+          they source are responsibly produced and recyclable. Additionally,
+          Microsoft has launched Circular Centers to optimize reuse and
+          recycling of cloud hardware, and they are developing technology to
+          drive a circular cloud. By focusing on material circularity, Microsoft
+          aims to reduce waste, conserve resources, and contribute to a more
+          sustainable economy.
+        line_number: 0
+    - inputs:
+        chat_input: How does Microsoft intend to empower its customers in relation to
+          emissions reduction?
+      outputs:
+        chat_output: Microsoft intends to empower its customers in relation to emissions
+          reduction by providing them with the tools and resources to measure,
+          monitor, and reduce their carbon footprint. They have developed a
+          range of sustainability solutions that enable customers to track and
+          report their environmental impact, optimize their energy consumption,
+          and shift to renewable energy sources. These solutions include the
+          Emissions Impact Dashboard for Azure, the Cloud for Sustainability,
+          and the Microsoft Sustainability Calculator. Microsoft also offers
+          guidance and best practices to help customers achieve their
+          sustainability goals. By empowering customers to take action on
+          sustainability, Microsoft aims to accelerate progress towards a more
+          sustainable future for all.
         line_number: 0
     is_chat_input: false
     is_chat_history: true
   chat_input:
     type: string
-    default: What are the limitations of using expenditure and sales data as proxy
-      data for estimating emissions?
+    default: How does Microsoft intend to empower its customers in relation to
+      emissions reduction?
     is_chat_input: true
 outputs:
   chat_output:
@@ -146,6 +305,14 @@ nodes:
     when: ""
     is: ""
   use_variants: false
+- name: get_last_three_messages_from_history
+  type: python
+  source:
+    type: code
+    path: get_last_three_messages_from_history.py
+  inputs:
+    chat_history: ${inputs.chat_history}
+  use_variants: false
 - name: Extract_Suggested_Action_from_content_safety
   type: python
   source:
@@ -161,6 +328,7 @@ nodes:
     tool: promptflow.tools.embedding.embedding
   inputs:
     connection: cop28-openai
+    deployment_name: text-embedding-ada-002
     input: ${inputs.chat_input}
   activate:
     when: ${Extract_Suggested_Action_from_content_safety.output}
@@ -173,6 +341,11 @@ nodes:
     tool: promptflow_vectordb.tool.vector_db_lookup.VectorDBLookup.search
   inputs:
     connection: cop28cognitive search connection
+    index_name: microsoftdataindex
+    search_filters: ""
+    search_params: ""
+    text_field: ""
+    vector_field: content_vector_open_ai
     top_k: 5
     vector: ${embedding.output}
   activate:
@@ -202,7 +375,7 @@ nodes:
     temperature: 0.9
     top_p: 1
     stop: ""
-    max_tokens: 1000
+    max_tokens: 300
     presence_penalty: 0
     frequency_penalty: 0
     logit_bias: ""
@@ -230,16 +403,18 @@ node_variants:
     variants:
       variant_0:
         node:
+          name: Prompt_variants
           type: prompt
           source:
             type: code
             path: Prompt_variants.jinja2
           inputs:
-            chat_history: ${inputs.chat_history}
+            chat_history: ${get_last_three_messages_from_history.output}
             chat_input: ${inputs.chat_input}
             contexts: ${generate_prompt_context.output}
       variant_3:
         node:
+          name: Prompt_variants
           type: prompt
           source:
             type: code
@@ -248,3 +423,5 @@ node_variants:
             chat_history: ${inputs.chat_history}
             chat_input: ${inputs.chat_input}
             contexts: ${generate_prompt_context.output}
+environment:
+  python_requirements_txt: requirements.txt

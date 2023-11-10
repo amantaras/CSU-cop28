@@ -1,0 +1,140 @@
+inputs:
+  chat_history:
+    type: list
+    default:
+    - inputs:
+        chat_input: how you can deploy AKS on azure?
+      outputs:
+        chat_output: 'I am not trained to answer that question. I can help you in the following topics: Understanding sustainability, Sustainability living tips, Recycling guidelines, Sustainability Products.'
+        line_number: 0
+    - inputs:
+        chat_input: how you can deploy AKS on azure?
+      outputs:
+        chat_output: 'I am not trained to answer that question. I can help you in the following topics: Understanding sustainability, Sustainability living tips, Recycling guidelines, Sustainability Products.'
+        line_number: 0
+    - inputs:
+        chat_input: how you can deploy AKS on azure?
+      outputs:
+        chat_output: 'I am not trained to answer that question. I can help you in the following topics: Understanding sustainability, Sustainability living tips, Recycling guidelines, Sustainability Products.'
+        line_number: 0
+    is_chat_input: false
+    is_chat_history: true
+  chat_input:
+    type: string
+    default: can I kill someone?
+    is_chat_input: true
+outputs:
+  chat_output:
+    type: string
+    reference: ${chat_with_context.output}
+    evaluation_only: false
+    is_chat_output: true
+nodes:
+- name: ContentSafety
+  type: python
+  source:
+    type: package
+    tool: content_safety_text.tools.content_safety_text_tool.analyze_text
+  inputs:
+    connection: cop28ContentSafety
+    hate_category: high_sensitivity
+    self_harm_category: high_sensitivity
+    sexual_category: high_sensitivity
+    text: ${inputs.chat_input}
+    violence_category: high_sensitivity
+  aggregation: false
+- name: Extract_Suggested_Action_from_content_safety
+  type: python
+  source:
+    type: code
+    path: Extract_Suggested_Action_from_content_dafety.py
+  inputs:
+    safety_result: ${chat_with_context.output}
+  aggregation: false
+- name: embedding
+  type: python
+  source:
+    type: package
+    tool: promptflow.tools.embedding.embedding
+  inputs:
+    connection: cop28-openai
+    deployment_name: text-embedding-ada-002
+    input: ${inputs.chat_input}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+- name: generate_prompt_context
+  type: python
+  source:
+    type: code
+    path: generate_prompt_context.py
+  inputs:
+    search_result: ${search_index.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+- name: chat_with_context
+  type: llm
+  source:
+    type: code
+    path: chat_with_context.jinja2
+  inputs:
+    deployment_name: gpt-35-turbo
+    temperature: 0
+    top_p: 1
+    stop: ""
+    max_tokens: 1000
+    presence_penalty: 0
+    frequency_penalty: 0
+    logit_bias: ""
+    prompt_text: ${Prompt_variants.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  api: chat
+  provider: AzureOpenAI
+  connection: cop28-openai
+  module: promptflow.tools.aoai
+  aggregation: false
+- name: search_index
+  type: python
+  source:
+    type: package
+    tool: promptflow_vectordb.tool.vector_db_lookup.VectorDBLookup.search
+  inputs:
+    connection: cop28cognitive search connection
+    index_name: cop28sutainability
+    search_filters: ""
+    search_params: ""
+    text_field: ""
+    vector_field: content_vector_open_ai
+    top_k: 3
+    vector: ${embedding.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+- name: Final_Answer
+  type: python
+  source:
+    type: code
+    path: Final_Answer.py
+  inputs: {}
+  aggregation: false
+- name: Prompt_variants
+  type: prompt
+  source:
+    type: code
+    path: Prompt_variants.jinja2
+  inputs:
+    chat_history: ${inputs.chat_history}
+    chat_input: ${inputs.chat_input}
+    contexts: ${generate_prompt_context.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+environment:
+  python_requirements_txt: requirements.txt

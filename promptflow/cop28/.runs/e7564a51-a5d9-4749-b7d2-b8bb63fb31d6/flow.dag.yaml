@@ -1,0 +1,207 @@
+inputs:
+  chat_history:
+    type: list
+    default:
+    - inputs:
+        chat_input: what is Microsoft strategy for suitainability?
+      outputs:
+        chat_output: Microsoft's sustainability strategy involves setting commitments based on science, considering all positions of influence, establishing sustainability as part of culture, making it central to business, ensuring governance and accountability, and reporting on everything. They aim to be a carbon negative, water positive, zero waste company by 2030 and are enacting a five-part strategy to achieve this, including increasing efficiency, building markets, forging partnerships, improving measurement, and advocating for policy. They also invest in green software engineering, science and research, and sustainable AI.
+        line_number: 0
+    - inputs:
+        chat_input: why carbon is important?
+      outputs:
+        chat_output: Carbon is important for several reasons. It is essential to life on Earth as it is the basis of organic chemistry and the building block for all living things. It is also a significant component of the Earth's atmosphere, where it plays a crucial role in regulating the planet's temperature through the carbon cycle. However, human activities, such as the burning of fossil fuels and deforestation, are causing an imbalance in the carbon cycle, leading to an increase of carbon in the atmosphere and contributing to global climate change.
+        line_number: 0
+    - inputs:
+        chat_input: 'why reducing carbon emissions help the planet? '
+      outputs:
+        chat_output: Reducing carbon emissions helps the planet because carbon dioxide is a significant greenhouse gas that contributes to global climate change. By reducing carbon emissions, we can slow down global warming, decrease the frequency and intensity of extreme weather events, preserve biodiversity, and protect human health and well-being. It is crucial to reduce carbon emissions to prevent further damage to the planet and ensure a sustainable future for generations to come.
+        line_number: 0
+    - inputs:
+        chat_input: can you give me tips to travel sustainable?
+      outputs:
+        chat_output: >-
+          Yes, here are some tips to travel sustainably:
+
+          1. Choose environmentally-friendly accommodations and transportation, such as eco-lodges and public transit.
+
+          2. Pack light, as heavier luggage consumes more fuel during transportation.
+
+          3. Bring a reusable water bottle and avoid single-use plastic bottles. 
+
+          4. Eat locally-sourced, seasonal, and plant-based meals.
+
+          5. Avoid waste by carrying a reusable bag, using reusable utensils, and avoiding excessive packaging.
+
+          6. Respect local culture and natural resources by engaging in sustainable tourism practices.
+
+          7. Offset your carbon footprint through programs that invest in renewable energy, reforestation, or other environmentally-friendly projects.
+
+          Remember that small actions can make a big impact when it comes to sustainable travel.
+        line_number: 0
+    - inputs:
+        chat_input: give me an example of sustainable travelling
+      outputs:
+        chat_output: An example of sustainable traveling is backpacking or cycling instead of driving or flying. It reduces carbon emissions, promotes physical activity, and allows travelers to experience local culture and nature up close. Additionally, staying in eco-lodges or camping sites that value sustainable practices, such as using renewable energy, composting, and minimizing waste, is another example of sustainable travel.
+        line_number: 0
+    - inputs:
+        chat_input: give me an example of sustainable travelling
+      outputs:
+        chat_output: An example of sustainable travel could be taking a train or bus instead of flying to a destination. This mode of transportation has a much lower carbon footprint compared to air travel and offers an opportunity to view the surroundings. Additionally, the traveler can choose to stay in environmentally-conscious accommodations, such as eco-lodges or sustainable campsites, and support local businesses that prioritize sustainability in their practices.
+        line_number: 0
+    - inputs:
+        chat_input: how is microsft supporting sutainability
+      outputs:
+        chat_output: Microsoft is committed to sustainability and has implemented various initiatives to support this goal. They have set a target to be carbon negative by 2030 and eliminate their historical carbon emissions by 2050. To achieve this, they are investing in renewable energy, implementing energy-efficient practices in their data centers and offices, and promoting circularity in their products. Microsoft is also developing green software to reduce the carbon footprint of their applications and supporting ecosystem restoration projects in the communities where their data centers are located. They work with industry groups, governments, and customers to advance sustainability, and publish an annual Environmental Sustainability Report to track their progress.
+        line_number: 0
+    - inputs:
+        chat_input: What is the primary source of Microsoft's operational carbon emissions, and what has been the focus of their carbon reduction efforts?
+      outputs:
+        chat_output: According to their Environmental Sustainability Report, the primary source of Microsoft's operational carbon emissions is Scope 2 emissions from electricity consumption, which accounted for more than 75% of their direct emissions in FY21. To reduce these emissions, Microsoft is investing in renewable energy, implementing energy-efficient practices in their data centers and offices, and using AI to optimize their energy consumption. They are also working with their suppliers to reduce their carbon footprint and promoting circularity in their products to minimize waste. Additionally, they are exploring new technologies such as hydrogen fuel cells and carbon capture to further reduce their emissions.
+        line_number: 0
+    - inputs:
+        chat_input: What challenges does Microsoft face when collecting data on supply chain emissions (Scope 3 Categories 1 and 2)?
+      outputs:
+        chat_output: Microsoft faces several challenges when collecting data on supply chain emissions, which fall under Scope 3 Categories 1 and 2. One of the biggest challenges is the lack of consistent and comparable data from their suppliers. This is compounded by the fact that emissions data can be difficult and expensive to collect accurately, especially for suppliers in developing countries. Furthermore, supply chains can be complex, and it can be challenging to track emissions across multiple tiers of suppliers. To address these challenges, Microsoft is working to improve the quality of their data by encouraging suppliers to disclose their emissions through their Supplier Code of Conduct and implementing independent third-party assurance of emissions data. They are also developing new methodologies to improve data granularity and promote transparency in their reporting.
+        line_number: 0
+    - inputs:
+        chat_input: What are the limitations of using expenditure and sales data as proxy data for estimating emissions?
+      outputs:
+        chat_output: Using expenditure and sales data as proxy data for estimating emissions has some limitations. Firstly, it assumes that all activities have the same emission intensity or that emission intensity is constant over time, which is not always the case. Secondly, it does not account for emissions from imported goods or international transportation, which can result in inaccurate estimates. Thirdly, it may not capture emissions from all activities, such as those from business travel or employees' commutes. Lastly, it can be challenging to categorize expenditure and sales data into relevant sectors and apply emission factors accurately. As a result, it is important to use multiple methods and data sources to accurately estimate emissions.
+        line_number: 0
+    - inputs:
+        chat_input: What is embodied carbon, and how does it relate to Microsoft's approach to carbon accounting?
+      outputs:
+        chat_output: Embodied carbon refers to the emissions associated with the production, transportation, and disposal of materials used in the construction or manufacture of a product or infrastructure. Microsoft's approach to carbon accounting includes considering embodied carbon as part of their product lifecycle assessments (LCAs) to evaluate the full environmental impact of their products. They also aim to reduce embodied carbon by using recycled materials and designing products that are easy to repair, refurbish, and reuse. Additionally, they are working with their suppliers to reduce embodied carbon in their supply chains and exploring new circular economy models to minimize waste and maximize resource efficiency.
+        line_number: 0
+    is_chat_input: false
+    is_chat_history: true
+  chat_input:
+    type: string
+    default: What is Microsoft's stance on establishing a parallel reporting structure for reflecting the climate value of indirect reduction credits on Scope 3 emissions?
+    is_chat_input: true
+outputs:
+  chat_output:
+    type: string
+    reference: ${Final_Answer.output}
+    evaluation_only: false
+    is_chat_output: true
+nodes:
+- name: ContentSafety
+  type: python
+  source:
+    type: package
+    tool: content_safety_text.tools.content_safety_text_tool.analyze_text
+  inputs:
+    connection: cop28ContentSafety
+    hate_category: high_sensitivity
+    self_harm_category: high_sensitivity
+    sexual_category: high_sensitivity
+    text: ${inputs.chat_input}
+    violence_category: high_sensitivity
+  activate:
+    when: ""
+    is: ""
+  aggregation: false
+- name: get_last_three_messages_from_history
+  type: python
+  source:
+    type: code
+    path: get_last_three_messages_from_history.py
+  inputs:
+    chat_history: ${inputs.chat_history}
+  aggregation: false
+- name: Extract_Suggested_Action_from_content_safety
+  type: python
+  source:
+    type: code
+    path: Extract_Suggested_Action_from_content_dafety.py
+  inputs:
+    safety_result: ${ContentSafety.output}
+  aggregation: false
+- name: embedding
+  type: python
+  source:
+    type: package
+    tool: promptflow.tools.embedding.embedding
+  inputs:
+    connection: cop28-openai
+    deployment_name: text-embedding-ada-002
+    input: ${inputs.chat_input}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+- name: search_index
+  type: python
+  source:
+    type: package
+    tool: promptflow_vectordb.tool.vector_db_lookup.VectorDBLookup.search
+  inputs:
+    connection: cop28cognitive search connection
+    index_name: microsoftdataindex
+    search_filters: ""
+    search_params: ""
+    text_field: ""
+    vector_field: content_vector_open_ai
+    top_k: 5
+    vector: ${embedding.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+- name: generate_prompt_context
+  type: python
+  source:
+    type: code
+    path: generate_prompt_context.py
+  inputs:
+    search_result: ${search_index.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+- name: chat_with_context
+  type: llm
+  source:
+    type: code
+    path: chat_with_context.jinja2
+  inputs:
+    deployment_name: gpt-35-turbo
+    temperature: 0.9
+    top_p: 1
+    stop: ""
+    max_tokens: 400
+    presence_penalty: 0
+    frequency_penalty: 0
+    logit_bias: ""
+    prompt_text: ${Prompt_variants.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  api: chat
+  provider: AzureOpenAI
+  connection: cop28-openai
+  module: promptflow.tools.aoai
+  aggregation: false
+- name: Final_Answer
+  type: python
+  source:
+    type: code
+    path: Final_Answer.py
+  inputs:
+    llm_answer: ${chat_with_context.output}
+    safety_result: ${Extract_Suggested_Action_from_content_safety.output}
+  aggregation: false
+- name: Prompt_variants
+  type: prompt
+  source:
+    type: code
+    path: Prompt_variants.jinja2
+  inputs:
+    chat_history: ${get_last_three_messages_from_history.output}
+    chat_input: ${inputs.chat_input}
+    contexts: ${generate_prompt_context.output}
+  aggregation: false
+environment:
+  python_requirements_txt: requirements.txt

@@ -1,0 +1,167 @@
+inputs:
+  chat_history:
+    type: list
+    default:
+    - inputs:
+        chat_input: How does Microsoft determine the total emissions for a specific datacenter over a given time period?
+      outputs:
+        chat_output: Microsoft uses a market-based method that includes consideration of contractual arrangements under which it procures power from specific suppliers or sources, such as renewable energy, to determine the total emissions for a specific datacenter over a given time period. They also recalculate emissions for improved accuracy and have internal criteria to provide an objective basis for measuring and reporting metrics.
+        line_number: 0
+    - inputs:
+        chat_input: Does Microsoft quantify customer-specific emissions for Azure services and regions? If so, how?
+      outputs:
+        chat_output: Yes, Microsoft quantifies customer-specific emissions for Azure services and regions using the Emissions Impact Dashboard. This tool estimates Microsoft's direct and indirect carbon emissions related to a customer's cloud usage, as well as the emissions customers have avoided by running workloads in the cloud rather than on-premises. The calculations are limited to Microsoft's datacenter emissions associated with commercial customer usage of Azure services and do not include usage associated with national cloud deployments.
+        line_number: 0
+    - inputs:
+        chat_input: How does Microsoft look at material circularity?
+      outputs:
+        chat_output: Microsoft looks at material circularity by following a circular approach to materials management, which involves reducing the amount of materials needed, responsibly sourcing materials, increasing the use of recycled and recyclable content, designing out waste, and keeping products and materials in use longer through reuse and repair. They also work with suppliers on more sustainable material innovations and have developed a patent-pending Intelligent Disposition and Routing System to establish and execute a zero waste plan for their cloud hardware assets.
+        line_number: 0
+    - inputs:
+        chat_input: In 2022, what percentage of Microsoft's operational emissions was represented by Scope 2 (electricity consumption) under the location-based and market-based methods?
+      outputs:
+        chat_output: The 2022 Microsoft Environmental Sustainability Report indicates that in FY22, Microsoft's Scope 2 emissions under the location-based method were approximately 1.07%, and under the market-based method were approximately 2.22%, of the company's total emissions.
+        line_number: 0
+    - inputs:
+        chat_input: What challenges does Microsoft face when collecting data on supply chain emissions (Scope 3 Categories 1 and 2)?
+      outputs:
+        chat_output: Microsoft faces several challenges when collecting data on supply chain emissions (Scope 3 Categories 1 and 2), including incomplete data, inconsistent data quality, and evolving industry standards. They have worked to address these issues by improving supplier engagement, updating their Supplier Code of Conduct to include emissions data disclosure and verification requirements, and developing new methodologies, such as using product-specific emissions factors for building materials, to improve data precision and granularity. However, there is still work to be done to drive more consistent and complete emissions reporting across Microsoft's supply chain.
+        line_number: 0
+    - inputs:
+        chat_input: What is the significance of helping develop markets for zero-carbon electricity, lower-carbon transportation, and lower-carbon materials in the context of decarbonization for Microsoft?
+      outputs:
+        chat_output: Developing markets for zero-carbon electricity, lower-carbon transportation, and lower-carbon materials is significant for Microsoft's decarbonization efforts because it helps to reduce emissions across their value chain. By investing in sustainable solutions and working with partners, Microsoft can influence the development and adoption of low-carbon technologies and products, which can reduce emissions from their own operations and those of their suppliers and customers. These efforts also help to accelerate the transition to a net-zero global economy and drive progress towards achieving Microsoft's ambitious emissions reduction targets.
+        line_number: 0
+    - inputs:
+        chat_input: How does Microsoft partner with electricity, travel, and material suppliers to fund indirect reductions in emissions?
+      outputs:
+        chat_output: Microsoft partners with electricity, travel, and material suppliers to fund indirect reductions in emissions by requiring suppliers to disclose GHG emissions and plans to reduce those emissions through their Supplier Code of Conduct. They also collaborate with suppliers to identify opportunities to shift to lower-carbon modes of transportation and energy, reduce supply chain emissions, and explore new sustainable innovations together. In some cases, Microsoft provides direct financial support to suppliers to make low-carbon investments, such as through the Microsoft Climate Innovation Fund. These joint efforts help to reduce the carbon impact of Microsoft's supply chain.
+        line_number: 0
+    - inputs:
+        chat_input: What are the limitations of using expenditure and sales data as proxy data for estimating emissions?
+      outputs:
+        chat_output: Using expenditure and sales data as proxy data for estimating emissions has several limitations, including the inability to capture all aspects of emissions along the supply chain, the lack of granularity in emissions data, and the potential for inaccuracies in emissions factors, particularly for different regions and sectors. Additionally, expenditure and sales data do not account for changes in production efficiency or shifts to lower-carbon processes and materials. Therefore, while these data sources can provide valuable insights into emissions trends, they should be complemented with more detailed emissions data to provide a more accurate picture of a company's total emissions.
+        line_number: 0
+    is_chat_input: false
+    is_chat_history: true
+  chat_input:
+    type: string
+    default: can kill you
+    is_chat_input: true
+outputs:
+  chat_output:
+    type: string
+    reference: ${Final_Answer.output}
+    evaluation_only: false
+    is_chat_output: true
+nodes:
+- name: ContentSafety
+  type: python
+  source:
+    type: package
+    tool: content_safety_text.tools.content_safety_text_tool.analyze_text
+  inputs:
+    connection: cop28ContentSafety
+    hate_category: high_sensitivity
+    self_harm_category: high_sensitivity
+    sexual_category: high_sensitivity
+    text: ${inputs.chat_input}
+    violence_category: high_sensitivity
+  activate:
+    when: ""
+    is: ""
+  aggregation: false
+- name: Extract_Suggested_Action_from_content_safety
+  type: python
+  source:
+    type: code
+    path: Extract_Suggested_Action_from_content_dafety.py
+  inputs:
+    safety_result: ${ContentSafety.output}
+  aggregation: false
+- name: embedding
+  type: python
+  source:
+    type: package
+    tool: promptflow.tools.embedding.embedding
+  inputs:
+    connection: cop28-openai
+    deployment_name: text-embedding-ada-002
+    input: ${inputs.chat_input}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+- name: search_index
+  type: python
+  source:
+    type: package
+    tool: promptflow_vectordb.tool.vector_db_lookup.VectorDBLookup.search
+  inputs:
+    connection: cop28cognitive search connection
+    index_name: microsoftdataindex
+    search_filters: ""
+    search_params: ""
+    text_field: ""
+    vector_field: content_vector_open_ai
+    top_k: 5
+    vector: ${embedding.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+- name: generate_prompt_context
+  type: python
+  source:
+    type: code
+    path: generate_prompt_context.py
+  inputs:
+    search_result: ${search_index.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  aggregation: false
+- name: chat_with_context
+  type: llm
+  source:
+    type: code
+    path: chat_with_context.jinja2
+  inputs:
+    deployment_name: gpt-35-turbo
+    temperature: 0.9
+    top_p: 1
+    stop: ""
+    max_tokens: 1000
+    presence_penalty: 0
+    frequency_penalty: 0
+    logit_bias: ""
+    prompt_text: ${Prompt_variants.output}
+  activate:
+    when: ${Extract_Suggested_Action_from_content_safety.output}
+    is: Accept
+  api: chat
+  provider: AzureOpenAI
+  connection: cop28-openai
+  module: promptflow.tools.aoai
+  aggregation: false
+- name: Final_Answer
+  type: python
+  source:
+    type: code
+    path: Final_Answer.py
+  inputs:
+    llm_answer: ${chat_with_context.output}
+    safety_result: ${Extract_Suggested_Action_from_content_safety.output}
+  aggregation: false
+- name: Prompt_variants
+  type: prompt
+  source:
+    type: code
+    path: Prompt_variants.jinja2
+  inputs:
+    chat_history: ${inputs.chat_history}
+    chat_input: ${inputs.chat_input}
+    contexts: ${generate_prompt_context.output}
+  aggregation: false
+environment:
+  python_requirements_txt: requirements.txt
