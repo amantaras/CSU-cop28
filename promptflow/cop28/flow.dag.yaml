@@ -1,5 +1,7 @@
 id: bring_your_own_data_chat_qna
 name: Bring Your Own Data Chat QnA
+environment:
+  python_requirements_txt: requirements.txt
 inputs:
   chat_history:
     type: list
@@ -328,7 +330,6 @@ nodes:
     tool: promptflow.tools.embedding.embedding
   inputs:
     connection: cop28-openai
-    deployment_name: text-embedding-ada-002
     input: ${inputs.chat_input}
   activate:
     when: ${Extract_Suggested_Action_from_content_safety.output}
@@ -341,11 +342,6 @@ nodes:
     tool: promptflow_vectordb.tool.vector_db_lookup.VectorDBLookup.search
   inputs:
     connection: cop28cognitive search connection
-    index_name: microsoftdataindex
-    search_filters: ""
-    search_params: ""
-    text_field: ""
-    vector_field: content_vector_open_ai
     top_k: 5
     vector: ${embedding.output}
   activate:
@@ -403,7 +399,6 @@ node_variants:
     variants:
       variant_0:
         node:
-          name: Prompt_variants
           type: prompt
           source:
             type: code
@@ -414,7 +409,6 @@ node_variants:
             contexts: ${generate_prompt_context.output}
       variant_3:
         node:
-          name: Prompt_variants
           type: prompt
           source:
             type: code
@@ -423,5 +417,3 @@ node_variants:
             chat_history: ${inputs.chat_history}
             chat_input: ${inputs.chat_input}
             contexts: ${generate_prompt_context.output}
-environment:
-  python_requirements_txt: requirements.txt
