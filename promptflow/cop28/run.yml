@@ -10,7 +10,7 @@ runtime: DEFAULT
 #     connection: cop28ContentSafety
 #     #deployment_name: cop28-content-safety
 #   embedding:
-#     connection: cop28cognitive search connection
+#     connection: cop28-azure-search
 #     deployment_name: text-embedding-ada-002
 #   #search_index:
 #   #  index_name: microsoftdataindex
